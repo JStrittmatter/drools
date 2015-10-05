@@ -7,7 +7,7 @@
 ##########################################################################
 
 ####### BASE ############
-FROM jboss/wildfly:8.1.0.Final
+FROM jboss/wildfly:8.2.1.Final
 
 ####### MAINTAINER ############
 MAINTAINER "Roger Martinez" "romartin@redhat.com"
