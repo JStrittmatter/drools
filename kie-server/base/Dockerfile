@@ -32,4 +32,4 @@ rm -rf /opt/jboss/$DROOLS_CONTEXT_PATH.war
 
 ####### RUNNING KIE-SERVER ############
 WORKDIR /opt/jboss/wildfly/bin/
-CMD ["./standalone.sh", "-b", "0.0.0.0", "--server-config=standalone-full.xml"]
+CMD ["./standalone.sh", "-b", "0.0.0.0", "--server-config=standalone-full.xml -Dorg.kie.server.id=$KIE_SERVER_ID -Dorg.kie.server.location=$KIE_SERVER_LOC -Dorg.kie.server.controller=$CONTROLLER_LOC -Dorg.kie.server.controller.user=$CONTROLLER_USER -Dorg.kie.server.controller.pwd=$CONTROLLER_PWD"]
