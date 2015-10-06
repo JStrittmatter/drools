@@ -7,14 +7,15 @@
 ##########################################################################
 
 ####### BASE ############
-FROM jboss/wildfly:8.2.1.Final
+FROM jboss/wildfly:9.0.1.Final
 
 ####### MAINTAINER ############
 MAINTAINER "Roger Martinez" "romartin@redhat.com"
 
 ####### ENVIRONMENT ############
 ENV KIE_REPOSITORY https://repository.jboss.org/nexus/content/groups/public-jboss/
-ENV DROOLS_VERSION 6.3.0.Final
+ENV DROOLS_VERSION 6.4.0-SNAPSHOT
+ENV DROOLS_SNAPSHOT_VERSION 6.4.0-20151002.171843-275
 ENV DROOLS_CLASSIFIER wildfly8
 ENV DROOLS_CONTEXT_PATH drools-wb
 ENV JAVA_OPTS -XX:MaxPermSize=256m -Xms256m -Xmx512m
@@ -24,7 +25,7 @@ ENV JAVA_OPTS -XX:MaxPermSize=256m -Xms256m -Xmx512m
 USER jboss
 
 ####### DROOLS-WB ############
-RUN curl -o /opt/jboss/$DROOLS_CONTEXT_PATH.war $KIE_REPOSITORY/org/kie/kie-drools-wb-distribution-wars/$DROOLS_VERSION/kie-drools-wb-distribution-wars-$DROOLS_VERSION-$DROOLS_CLASSIFIER.war && \ 
+RUN curl -o /opt/jboss/$DROOLS_CONTEXT_PATH.war $KIE_REPOSITORY/org/kie/kie-drools-wb-distribution-wars/$DROOLS_VERSION/kie-drools-wb-distribution-wars-$DROOLS_SNAPSHOT_VERSION-$DROOLS_CLASSIFIER.war && \ 
 unzip -q /opt/jboss/$DROOLS_CONTEXT_PATH.war -d /opt/jboss/wildfly/standalone/deployments/$DROOLS_CONTEXT_PATH.war &&  \ 
 touch /opt/jboss/wildfly/standalone/deployments/$DROOLS_CONTEXT_PATH.war.dodeploy &&  \ 
 rm -rf /opt/jboss/$DROOLS_CONTEXT_PATH.war
