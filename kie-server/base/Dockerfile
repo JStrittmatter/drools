@@ -14,7 +14,7 @@ MAINTAINER "Roger Martinez" "romartin@redhat.com"
 
 ####### ENVIRONMENT ############
 ENV KIE_REPOSITORY https://repository.jboss.org/nexus/content/groups/public-jboss/
-ENV DROOLS_VERSION 6.2.0.Final
+ENV DROOLS_VERSION 6.3.0-SNAPSHOT
 ENV DROOLS_CLASSIFIER ee7
 ENV DROOLS_CONTEXT_PATH kie-server
 ENV JAVA_OPTS -XX:MaxPermSize=256m -Xms256m -Xmx512m
