@@ -7,7 +7,7 @@
 ##########################################################################
 
 ####### BASE ############
-FROM jboss/wildfly:9.0.1.Final
+FROM jboss/wildfly:9.0.2.Final
 
 ####### MAINTAINER ############
 MAINTAINER "Roger Martinez" "romartin@redhat.com"
@@ -16,7 +16,7 @@ MAINTAINER "Roger Martinez" "romartin@redhat.com"
 ENV KIE_REPOSITORY https://repository.jboss.org/nexus/content/groups/public-jboss/
 ENV DROOLS_VERSION 6.4.0-SNAPSHOT
 ENV DROOLS_SNAPSHOT_VERSION 6.4.0-20151002.171843-275
-ENV DROOLS_CLASSIFIER wildfly8
+ENV DROOLS_CLASSIFIER wildfly9
 ENV DROOLS_CONTEXT_PATH drools-wb
 ENV JAVA_OPTS -XX:MaxPermSize=256m -Xms256m -Xmx512m
 
